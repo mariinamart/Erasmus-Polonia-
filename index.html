@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #fff7f5;
+    color: #5b4141;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    margin: 15px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.locked {
+    opacity: 0.55;
+}
+
+.month {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.date {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    background: #d99a9a;
+    color: white;
+    font-size: 15px;
+}
+
+.letter {
+    display: none;
+    margin-top: 20px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.letter img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>♡ Para ti ♡</h1>
+
+<div class="subtitle">
+11 meses, 11 cartas y un poquito de mí para acompañarte mientras estés lejos.
+</div>
+
+<div id="letters"></div>
+
+</div>
+
+<script>
+
+const cartas = [
+
+{
+mes: "Septiembre",
+fecha: "2026-09-12",
+texto: "Aquí irá tu carta de septiembre ❤️"
+},
+
+{
+mes: "Octubre",
+fecha: "2026-10-12",
+texto: "Aquí irá tu carta de octubre ❤️"
+},
+
+{
+mes: "Noviembre",
+fecha: "2026-11-12",
+texto: "Aquí irá tu carta de noviembre ❤️"
+},
+
+{
+mes: "Diciembre",
+fecha: "2026-12-12",
+texto: "Aquí irá tu carta de diciembre ❤️"
+},
+
+{
+mes: "Enero",
+fecha: "2027-01-12",
+texto: "Aquí irá tu carta de enero ❤️"
+},
+
+{
+mes: "Febrero",
+fecha: "2027-02-12",
+texto: "Aquí irá tu carta de febrero ❤️"
+},
+
+{
+mes: "Marzo",
+fecha: "2027-03-12",
+texto: "Aquí irá tu carta de marzo ❤️"
+},
+
+{
+mes: "Abril",
+fecha: "2027-04-12",
+texto: "Aquí irá tu carta de abril ❤️"
+},
+
+{
+mes: "Mayo",
+fecha: "2027-05-12",
+texto: "Aquí irá tu carta de mayo ❤️"
+},
+
+{
+mes: "Junio",
+fecha: "2027-06-12",
+texto: "Aquí irá tu carta de junio ❤️"
+},
+
+{
+mes: "Julio",
+fecha: "2027-07-12",
+texto: "Aquí irá tu carta de julio ❤️"
+}
+
+];
+
+const ahora = new Date();
+
+const contenedor = document.getElementById("letters");
+
+cartas.forEach((carta, index) => {
+
+    const fecha = new Date(carta.fecha + "T00:00:00");
+    const desbloqueada = ahora >= fecha;
+
+    const div = document.createElement("div");
+
+    div.className = "card " + (desbloqueada ? "" : "locked");
+
+    if (desbloqueada) {
+
+        div.innerHTML = `
+            <div class="month">♡ ${carta.mes} ♡</div>
+            <div class="date">12 de ${carta.mes}</div>
+            <button onclick="abrir(${index})">Abrir mi carta 💌</button>
+
+            <div class="letter" id="letter-${index}">
+                <p>${carta.texto}</p>
+            </div>
+        `;
+
+    } else {
+
+        div.innerHTML = `
+            <div class="month">🔒 ${carta.mes}</div>
+            <div class="date">Disponible el día 12</div>
+        `;
+
+    }
+
+    contenedor.appendChild(div);
+});
+
+function abrir(index) {
+    const carta = document.getElementById("letter-" + index);
+
+    if (carta.style.display === "block") {
+        carta.style.display = "none";
+    } else {
+        carta.style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+</html>
