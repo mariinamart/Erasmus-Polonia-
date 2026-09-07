@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Para que 2330 Km no sean para tanto</title>
 
+
 <style>
+
 body {
     margin: 0;
     font-family: Georgia, serif;
@@ -14,22 +20,26 @@ body {
     text-align: center;
 }
 
+
 .container {
     max-width: 600px;
     margin: auto;
     padding: 40px 20px;
 }
 
+
 h1 {
     font-size: 38px;
     margin-bottom: 10px;
 }
+
 
 .subtitle {
     font-size: 18px;
     font-style: italic;
     margin-bottom: 40px;
 }
+
 
 .card {
     background: white;
@@ -39,19 +49,23 @@ h1 {
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
+
 .locked {
     opacity: 0.55;
 }
+
 
 .month {
     font-size: 23px;
     font-weight: bold;
 }
 
+
 .date {
     margin-top: 8px;
     font-size: 14px;
 }
+
 
 button {
     margin-top: 15px;
@@ -61,7 +75,9 @@ button {
     background: #d99a9a;
     color: white;
     font-size: 15px;
+    cursor: pointer;
 }
+
 
 .letter {
     display: none;
@@ -70,150 +86,307 @@ button {
     text-align: left;
 }
 
+
 .letter img {
     width: 100%;
     border-radius: 15px;
     margin-bottom: 20px;
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-<h1>♡  Para que 2.330 km no sean para tanto  ♡</h1>
+<h1>♡ Para que 2.330 km no sean para tanto ♡</h1>
+
 
 <div class="subtitle">
- Aunque no esté allí contigo, me tienes presente en cada palabra de estas cartas.
+
+Aunque no esté allí contigo, me tienes presente en cada palabra de estas cartas.
+
 </div>
+
 
 <div id="letters"></div>
 
+
 </div>
 
+
+
 <script>
+
 
 const cartas = [
 
 {
 mes: "Septiembre",
+
 fecha: "2026-09-06",
-texto: " Hoy es 12 de septiembre y aun no te has ido. Sé que tienes una mezcla de sensaciones y de emociones , pero lo más importante son las GANAS. Armando eres una persona muy sociable y a la vez independiente . Eso significa que te va a ir bien tanto si estas con gente como si necesitas tu espacio. Por mi parte también es una mezcla de emociones y sensaciones ya que sé que el amor de mi vida va a estar lejos pero a la vez sé que vas a estar feliz y eso me emociona. Quiero verte feliz porque tienes una de las sonrisas más bonitas que han visto mis ojos y el mundo merece verla tambien. No quiero que la primera carta sea eterna, así que simplemente quería también agradecerte el que tú estes en mi vida y lo feliz que me haces tanto en Málaga como en Polonia. Te quiero más y . pero no final ❤️"
+
+foto: "fotos/septiembre.jpeg",
+
+texto: "Hoy es 12 de septiembre y aun no te has ido. Sé que tienes una mezcla de sensaciones y de emociones, pero lo más importante son las GANAS. Armando eres una persona muy sociable y a la vez independiente. Eso significa que te va a ir bien tanto si estas con gente como si necesitas tu espacio. Por mi parte también es una mezcla de emociones y sensaciones ya que sé que el amor de mi vida va a estar lejos pero a la vez sé que vas a estar feliz y eso me emociona. Quiero verte feliz porque tienes una de las sonrisas más bonitas que han visto mis ojos y el mundo merece verla también. No quiero que la primera carta sea eterna, así que simplemente quería también agradecerte el que tú estés en mi vida y lo feliz que me haces tanto en Málaga como en Polonia. Te quiero más y... pero no final ❤️"
+
 },
 
+
 {
+
 mes: "Octubre",
+
 fecha: "2026-10-12",
-texto: "Hola mi vida, hoy es 12 de Octubre y ya llevas un tiempo allí en Polonia. Espero que lo estes disfrutando como un niño porque lo mereces.Quería recordarte que si en algun momento te sientes solo o te apetece un abrazo que sepas que estoy a una videollamada de distancia, da igual la hora, da igual el día. Y también quería decirte que si algo te recuerda a mi o si simplemente te apetece compartir algo conmigo, que sepas que para mi no es una molestia porque ME ENCANTA que me cuentes todo aquello que te ilusiona. Al igual, yo cada vez que me acuerde de ti o que te eche un poquitito de menos te petaré a audios fotos o mensajes sin la necesidad de verlos o abrirlos al momento, que tampoco quiero ser pesasa yo JAJAJA. Fun fact: hace un año que vine de reino unido y me regalaste las primeras flores moradas. Desde ahí sabía que, pasara lo que pasara y nos llevara la vida donde nos llevaras, tú ibas a ser alguien que me ha marcado para bien. Solo hace falta vernos los ojos o las sonrisas cuando estamos juntos. Las cosquillas, el dar por culo, los te quiero, los besos, los abrazos, los sueños, los miedos... ya paro que lloro JAJAJA Te quiero, hasta el 12 de Noviembre, que ahí ya habré estado en Polonia contigo. Ya solo quedan 24 días para verte.T Q"
+
+foto: "fotos/octubre.jpeg",
+
+texto: "Hola mi vida, hoy es 12 de Octubre y ya llevas un tiempo allí en Polonia. Espero que lo estés disfrutando como un niño porque lo mereces. Quería recordarte que si en algún momento te sientes solo o te apetece un abrazo que sepas que estoy a una videollamada de distancia, da igual la hora, da igual el día. Y también quería decirte que si algo te recuerda a mí o si simplemente te apetece compartir algo conmigo, que sepas que para mí no es una molestia porque ME ENCANTA que me cuentes todo aquello que te ilusiona. Al igual, yo cada vez que me acuerde de ti o que te eche un poquitito de menos te petaré a audios, fotos o mensajes sin la necesidad de verlos o abrirlos al momento, que tampoco quiero ser pesada yo JAJAJA. Fun fact: hace un año que vine de Reino Unido y me regalaste las primeras flores moradas. Desde ahí sabía que, pasara lo que pasara y nos llevara la vida donde nos llevara, tú ibas a ser alguien que me ha marcado para bien. Solo hace falta vernos los ojos o las sonrisas cuando estamos juntos. Las cosquillas, el dar por culo, los te quiero, los besos, los abrazos, los sueños, los miedos... ya paro que lloro JAJAJA. Te quiero, hasta el 12 de Noviembre, que ahí ya habré estado en Polonia contigo. Ya solo quedan 24 días para verte. TQ"
+
 },
 
+
 {
+
 mes: "Noviembre",
+
 fecha: "2026-11-12",
+
+foto: "fotos/noviembre.jpeg",
+
 texto: "Aquí irá tu carta de noviembre ❤️"
+
 },
 
+
 {
+
 mes: "Diciembre",
+
 fecha: "2026-12-12",
+
+foto: "fotos/diciembre.jpeg",
+
 texto: "Aquí irá tu carta de diciembre ❤️"
+
 },
 
+
 {
+
 mes: "Enero",
+
 fecha: "2027-01-12",
+
+foto: "fotos/enero.jpeg",
+
 texto: "Aquí irá tu carta de enero ❤️"
+
 },
 
+
 {
+
 mes: "Febrero",
+
 fecha: "2027-02-12",
+
+foto: "fotos/febrero.jpeg",
+
 texto: "Aquí irá tu carta de febrero ❤️"
+
 },
 
+
 {
+
 mes: "Marzo",
+
 fecha: "2027-03-12",
+
+foto: "fotos/marzo.jpeg",
+
 texto: "Aquí irá tu carta de marzo ❤️"
+
 },
 
+
 {
+
 mes: "Abril",
+
 fecha: "2027-04-12",
+
+foto: "fotos/abril.jpeg",
+
 texto: "Aquí irá tu carta de abril ❤️"
+
 },
 
+
 {
+
 mes: "Mayo",
+
 fecha: "2027-05-12",
+
+foto: "fotos/mayo.jpeg",
+
 texto: "Aquí irá tu carta de mayo ❤️"
+
 },
 
+
 {
+
 mes: "Junio",
+
 fecha: "2027-06-12",
+
+foto: "fotos/junio.jpeg",
+
 texto: "Aquí irá tu carta de junio ❤️"
+
 },
 
+
 {
+
 mes: "Julio",
+
 fecha: "2027-07-12",
+
+foto: "fotos/julio.jpeg",
+
 texto: "Aquí irá tu carta de julio ❤️"
+
 }
 
 ];
 
+
+
 const ahora = new Date();
+
 
 const contenedor = document.getElementById("letters");
 
+
+
 cartas.forEach((carta, index) => {
 
+
     const fecha = new Date(carta.fecha + "T00:00:00");
+
+
     const desbloqueada = ahora >= fecha;
+
 
     const div = document.createElement("div");
 
+
     div.className = "card " + (desbloqueada ? "" : "locked");
+
+
 
     if (desbloqueada) {
 
+
         div.innerHTML = `
+
+
             <div class="month">♡ ${carta.mes} ♡</div>
+
+
             <div class="date">12 de ${carta.mes}</div>
-            <button onclick="abrir(${index})">Abrir mi carta 💌</button>
+
+
+            <button onclick="abrir(${index})">
+                Abrir mi carta 💌
+            </button>
+
+
 
             <div class="letter" id="letter-${index}">
-            <img src="CEB6FE12-DEF7-4E29-A710-CECA3257A65.jpeg" alt="Foto">
-    
-    <p>${carta.texto}</p>
-</div>
+
+
+                <img 
+                src="${carta.foto}" 
+                alt="Foto de ${carta.mes}"
+                >
+
+
+                <p>${carta.texto}</p>
+
+
+            </div>
+
+
         `;
 
+
     } else {
+
 
         div.innerHTML = `
-            <div class="month">🔒 ${carta.mes}</div>
-            <div class="date">Disponible el día 12</div>
+
+
+            <div class="month">
+                🔒 ${carta.mes}
+            </div>
+
+
+            <div class="date">
+                Disponible el día 12
+            </div>
+
+
         `;
 
+
     }
+
+
 
     contenedor.appendChild(div);
+
+
 });
 
+
+
 function abrir(index) {
+
+
     const carta = document.getElementById("letter-" + index);
 
+
+
     if (carta.style.display === "block") {
+
+
         carta.style.display = "none";
+
+
     } else {
+
+
         carta.style.display = "block";
+
+
     }
+
+
 }
+
 
 </script>
 
+
 </body>
+
 </html>
